@@ -19,6 +19,8 @@ def setup():
                    './_data/DogQuotes/DogQuotesCSV.csv']
 
     # TODO: Use the Ingestor class to parse all files in the
+    # https://knowledge.udacity.com/questions/643985
+
     # quote_files variable
     quotes = None
 
