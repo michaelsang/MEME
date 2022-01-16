@@ -4,6 +4,7 @@ from .IngestorInterface import IngestorInterface
 from .TextIngestor import TextIngestor
 from .DocxIngestor import DocxIngestor
 from .CsvIngestor import CsvIngestor
+from .PdfIngestor import PdfIngestor
 
 from .QuoteModel import QuoteModel
 from typing import List
@@ -14,7 +15,7 @@ class Ingestor(IngestorInterface):
     It should implement logic to choose the appropriate helper ingestor type based on filetype.
     """
 
-    ingestors = [TextIngestor, DocxIngestor, CsvIngestor]
+    ingestors = [TextIngestor, DocxIngestor, CsvIngestor, PdfIngestor]
     # https://knowledge.udacity.com/questions/439686
 
     """
