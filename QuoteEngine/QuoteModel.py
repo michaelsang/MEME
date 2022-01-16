@@ -1,3 +1,4 @@
+
 class QuoteModel():
     """QuoteModel class to encapsulate the body and author."""
 

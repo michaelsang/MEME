@@ -2,6 +2,7 @@
 from .IngestorInterface import IngestorInterface
 
 from .TextIngestor import TextIngestor
+from .DocxIngestor import DocxIngestor
 from .QuoteModel import QuoteModel
 from typing import List
 
@@ -11,9 +12,8 @@ class Ingestor(IngestorInterface):
     It should implement logic to choose the appropriate helper ingestor type based on filetype.
     """
 
-    # helper_ingestors = [DocxIngestor, CSVIngestor, TextIngestor, PDFIngestor]
+    ingestors = [DocxIngestor, TextIngestor]
     # https://knowledge.udacity.com/questions/439686
-    helper_ingestors = [TextIngestor]
 
     """
     The IngestorInterface defines the common functionalities (methods) that need to be implemented by the Interface classes. The purpose of the Interface is to define the common methods without the logic i.e. they don't have body of the function.
