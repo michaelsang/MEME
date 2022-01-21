@@ -2,7 +2,7 @@ import argparse
 import os
 import random
 
-# @TODO Import your Ingestor and MemeEngine classes
+# Import your Ingestor and MemeEngine classes
 from QuoteEngine import Ingestor, QuoteModel
 from MemeEngine import MemeGenerator
 
@@ -43,7 +43,7 @@ def generate_meme(path=None, body=None, author=None):
 
 
 if __name__ == "__main__":
-    # @TODO Use ArgumentParser to parse the following CLI arguments
+    # Use ArgumentParser to parse the following CLI arguments
     parser = argparse.ArgumentParser(description='gives a meme')
 
     # path - path to an image file
