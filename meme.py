@@ -12,7 +12,7 @@ def generate_meme(path=None, body=None, author=None):
     img = None
     quote = None
 
-    if path is None: # path argument is list
+    if path is None:
         images = "./_data/photos/dog/"
         imgs = []
         for root, dirs, files in os.walk(images):
@@ -20,7 +20,7 @@ def generate_meme(path=None, body=None, author=None):
 
         img = random.choice(imgs)
     else:
-        img = path[0] # if path is string get first character
+        img = path  #https: // knowledge.udacity.com / questions / 687237
 
     if body is None:
         quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',

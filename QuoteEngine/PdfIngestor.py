@@ -18,9 +18,9 @@ class PdfIngestor(IngestorInterface):
 
         quotes = []
         try:
-            tmp = f'./_data/DogQuotes/{random.randint(0, 1000000)}.txt'
-            call = subprocess.call(['C:/Users/mkhsa/xpdf-tools-win-4.03/bin64/pdftotext.exe', path, tmp])
-            #call = subprocess.call(['pdftotext', path, tmp])  #does not work unless fully specified path
+            #tmp = f'./_data/DogQuotes/{random.randint(0, 1000000)}.txt'
+            tmp = f'./tmp/{random.randint(0, 1000000)}.txt'
+            call = subprocess.call(['pdftotext', path, tmp])
 
             pdf_file = open(tmp, "r")
             quotes = []
@@ -35,7 +35,7 @@ class PdfIngestor(IngestorInterface):
 
 
         except Exception as e:
-            raise Exception("Text file parsing error occurred.")
+            raise Exception("PDF file parsing error occurred.")
 
     # https://knowledge.udacity.com/questions/572306
     # https://knowledge.udacity.com/questions/633566
