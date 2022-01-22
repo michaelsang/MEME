@@ -1,4 +1,3 @@
-"""An ingestor for reading docx files."""
 from typing import List
 
 import docx as docx
@@ -14,6 +13,7 @@ class DocxIngestor(IngestorInterface):
     https://knowledge.udacity.com/questions/572306
     https://knowledge.udacity.com/questions/559464
     """
+    extensions = ['docx']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:

@@ -1,4 +1,3 @@
-"""An ingestor for reading text files."""
 import random
 import subprocess
 from typing import List
@@ -10,6 +9,7 @@ class PdfIngestor(IngestorInterface):
     """Ingestor class makes use of all other classes.
 
     Each ingestor has a can_ingest function to validate if it can ingest the file."""
+    extensions = ['pdf']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:

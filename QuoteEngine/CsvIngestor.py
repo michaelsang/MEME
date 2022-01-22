@@ -1,4 +1,3 @@
-"""An ingestor for reading text files."""
 from typing import List
 import pandas as pd
 from .QuoteModel import QuoteModel
@@ -9,6 +8,7 @@ class CsvIngestor(IngestorInterface):
     """Ingestor class makes use of all other classes.
 
     Each ingestor has a can_ingest function to validate if it can ingest the file."""
+    extensions = ['csv']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:

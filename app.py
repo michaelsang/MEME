@@ -9,7 +9,7 @@ from MemeEngine import MemeGenerator
 
 app = Flask(__name__)
 
-meme = MemeGenerator('./static2')
+meme = MemeGenerator('./static')
 
 
 def setup():
@@ -35,7 +35,7 @@ def setup():
     # images within the images images_path directory
     imgs = []
     for root, dirs, files in os.walk(images_path):
-        imgs = [os.path.join()(root, name) for name in files]
+        imgs = [os.path.join(root, name) for name in files]
     return quotes, imgs
 
 

@@ -1,4 +1,3 @@
-"""An ingestor for reading text files."""
 from typing import List
 
 from .QuoteModel import QuoteModel
@@ -8,7 +7,11 @@ from .IngestorInterface import IngestorInterface
 class TextIngestor(IngestorInterface):
     """Ingestor class makes use of all other classes.
 
-    Each ingestor has a can_ingest function to validate if it can ingest the file."""
+    Ingestor class inherits the IngestorInterface.
+    Each ingestor has a can_ingest function to validate
+    if it can ingest the file."""
+
+    extensions = ['txt']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
