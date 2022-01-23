@@ -66,24 +66,29 @@ def meme_form():
 def meme_post():
     """ Create a user defined meme """
 
-    #
-    # 1. Use requests to save the image from the image_url
-    #    form param to a temp local file.
-    image_url = request.form['image_url']
-    # 2. Use the meme object to generate a meme using this temp
-    #    file and the body and author form paramaters.
-    body = request.form['body']
-    author = request.form['author']
-    req = requests.get(image_url, allow_redirects = True)
-    temp_file = f'./{random.randint(0, 10000)}.jpg'
-    open(temp_file,"wb").write(req.content)
-    path = meme.make_meme(temp_file, body, author)
-    # 3. Remove the temporary saved image.
-    os.remove(temp_file)
+    try:
+        #
+        # 1. Use requests to save the image from the image_url
+        #    form param to a temp local file.
+        image_url = request.form['image_url']
+        # 2. Use the meme object to generate a meme using this temp
+        #    file and the body and author form paramaters.
+        body = request.form['body']
+        author = request.form['author']
+        req = requests.get(image_url, allow_redirects = True)
+        temp_file = f'./{random.randint(0, 10000)}.jpg'
+        open(temp_file,"wb").write(req.content)
+        path = meme.make_meme(temp_file, body, author)
+        # 3. Remove the temporary saved image.
+        os.remove(temp_file)
 
-    #path = None
+        #path = None
 
-    return render_template('meme.html', path=path)
+        return render_template('meme.html', path=path)
+
+    except Exception as e:
+        print("Invalid file type entered", e)
+        return render_template('meme_error.html')
 
 
 if __name__ == "__main__":
