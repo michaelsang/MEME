@@ -1,16 +1,16 @@
 # MEME
-The application you build must:
+The application:
 
 Interact with a variety of complex filetypes. This emulates the kind of data you’ll encounter in a data engineering role.
 Load quotes from a variety of filetypes (PDF, Word Documents, CSVs, Text files).
 Load, manipulate, and save images.
 Accept dynamic user input through a command-line tool and a web service. This emulates the kind of work you’ll encounter as a full stack developer.
-This project will give you a hands-on opportunity to practice what you've learned in this course, such as:
+This project will give you a hands-on opportunity to practice lessons in this course, such as:
 
 Object-oriented thinking in Python, including abstract classes, class methods, and static methods.
 DRY (don’t repeat yourself) principles of class and method design.
 Working with modules and packages in Python.
-As you're building your project, be sure to demonstrate coding best practices for style and documentation. Ensure your code, docstrings, and comments adhere to PEP 8 Standards.
+Coding best practices for style and documentation. Ensure code, docstrings, and comments adhere to PEP 8 Standards.
 
 
 # Quote Engine
