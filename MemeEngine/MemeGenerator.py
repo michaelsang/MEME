@@ -1,5 +1,6 @@
 """MemeGenerator uses Pillow library to create memes"""
 import os
+import textwrap
 from random import random, randint
 
 from PIL import Image, ImageDraw, ImageFont
@@ -28,7 +29,10 @@ class MemeGenerator:
             draw = ImageDraw.Draw(scaled_img)
             font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf',
                                         size=20)
-            draw.text((10, 10), f'"{text}" - {author}', font=font)
+            #draw.text((10, 10), f'"{text}" - {author}', font=font)
+            #Adding text wrap with fill()method for very long text.
+            wrapped_text = textwrap.fill(text=f"{text} - {author}")
+            draw.text((10, 35), wrapped_text, font=font)
         rand_num = randint(0, 10000)
         out_file = os.path.join(self.output_dir, f'./{rand_num}.jpg')
         scaled_img.save(out_file)
